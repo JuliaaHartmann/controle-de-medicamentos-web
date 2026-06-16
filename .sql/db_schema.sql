@@ -3,8 +3,8 @@ BEGIN
     CREATE DATABASE [controle-de-medicamentos-web]
 END;
 
-USE [controle-de-medicamentos-web]
-GO
+--USE [controle-de-medicamentos-web]
+--GO
 
 CREATE TABLE [dbo].[TBFornecedor] (
 [Id] uniqueidentifier NOT NULL,
