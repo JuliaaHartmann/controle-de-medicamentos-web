@@ -1,3 +1,11 @@
+IF DB_ID('controle-de-medicamentos-web') IS NULL
+BEGIN
+    CREATE DATABASE [controle-de-medicamentos-web]
+END;
+
+USE [controle-de-medicamentos-web]
+GO
+
 CREATE TABLE [dbo].[TBFornecedor] (
 [Id] uniqueidentifier NOT NULL,
 [Nome] nvarchar(100) NOT NULL,
