@@ -9,7 +9,7 @@ public sealed class RepositorioFornecedorEmSql(ISqlConnectionFactory connectionF
     : IRepositorioFornecedor
 {
     private const string InserirSql = """
-        INSERT INTO [dbo].[TBFOrnecedor] ([Id], [Nome], [Telefone], [Cnpj])
+        INSERT INTO [dbo].[TBFornecedor] ([Id], [Nome], [Telefone], [Cnpj])
         VALUES (@Id, @Nome, @Telefone, @Cnpj)
     """;
 

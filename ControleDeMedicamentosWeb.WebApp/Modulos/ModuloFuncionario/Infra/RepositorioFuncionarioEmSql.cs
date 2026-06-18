@@ -9,8 +9,8 @@ public sealed class RepositorioFuncionarioEmSql(ISqlConnectionFactory connection
 {
 
     private const string InserirSql = """
-        INSERT INTO [dbo].[TBFuncionario] )[Id], [Nome], [Telefone], [CPF]
-        VALUES (@Id, @Nome, @Telefone, @CPF
+        INSERT INTO [dbo].[TBFuncionario] ([Id], [Nome], [Telefone], [CPF])
+        VALUES (@Id, @Nome, @Telefone, @CPF);
     """;
 
     private const string ExcluirSql = """

@@ -9,8 +9,8 @@ public sealed class RepositorioPacienteEmSql(ISqlConnectionFactory connectionFac
     : IRepositorioPaciente
 {
     private const string InserirSql = """
-        INSERTO TO ]dbo].[TBPaciente] ([Id], [Nome], [Telefone], [CartaoSUS], [CPF])
-        VALUES (@Id, @Nome, @Telefone, @CPF)                                  
+        INSERT INTO [dbo].[TBPaciente] ([Id], [Nome], [Telefone], [CartaoSUS], [CPF])
+        VALUES (@Id, @Nome, @Telefone, @CartaoSUS, @CPF)                                  
     """;
 
     private const string AtualizarSql = """
@@ -18,7 +18,7 @@ public sealed class RepositorioPacienteEmSql(ISqlConnectionFactory connectionFac
         SET
             [Nome] = @Nome,
             [Telefone] = @Telefone,
-            [CartatoSUS] = @CartaoSUS,
+            [CartaoSUS] = @CartaoSUS,
             [CPF] = @CPF
         WHERE [Id] = @Id                                    
     """;
@@ -26,15 +26,16 @@ public sealed class RepositorioPacienteEmSql(ISqlConnectionFactory connectionFac
         DELETE FROM [dbo].[TBPaciente]
         WHERE [Id] = @Id;                                  
     """;
-    private const string SelecionarPorIdSql = """
-        SELECT [Id], [Nome], [Telefone], [CartaoSUS], [CPF]
-        FROM [dbo].[TBPaciente]
-        WHERE [Id] = @Id;                                      
-    """;
     private const string SelecionarTodosSql = """
-        SELECT [Id], [Nome], [Telefone], [CartaoSUS], [CPF]
-        FROM [dbo].[TBPaciente]
-        WHERE [Id] = @Id;                                
+        SELECT Id, Nome, Telefone, Cpf, CartaoSus
+        FROM dbo.TBPaciente
+        ORDER BY Nome;
+    """;
+
+    private const string SelecionarPorIdSql = """
+        SELECT Id, Nome, Telefone, Cpf, CartaoSus
+        FROM dbo.TBPaciente
+        WHERE Id = @Id;
     """;
     public void Cadastrar(Paciente entidade)
     {
