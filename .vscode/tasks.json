@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "sqlproj: Build ControleDeMedicamentosWeb.DataBase",
+			"type": "process",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"c:/Users/julia/Projetos/Academia do Programador/SQL/controle-de-medicamentos-web/ControleDeMedicamentosWeb.DataBase/ControleDeMedicamentosWeb.DataBase.sqlproj"
+			],
+			"problemMatcher": "$sqlproj-problem-matcher",
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"detail": "Builds the ControleDeMedicamentosWeb.DataBase SQL project"
+		}
+	]
+}
